@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+<h2 style="text-align:center"> {{name}}</h2>
+<br>
+<h3 style="text-align:left; margin-left:20px;">Description <span style="float:right; margin-right:20px;">{{minutes}} Minutes</span></h3>
+<h4 style="font-size:20px;margin-left:10px;font-weight:400;">{{description}}</h4>
+<br> <br>
+
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-5">
+		<h3 style="margin-left:20px;">Ingredients</h3>
+		<ul>
+			{% for ingredient in ingredients%}
+				<li>{{ingredient.ingredient}}</li>
+			{%endfor%}
+		</ul>
+	</div>
+	<div class="col-7">
+		<h3>Steps</h3>
+		<ol>
+			{% for step in steps%}
+				<li>{{step.description}}</li>
+			{%endfor%}
+		</ol>
+	</div>
+</div>
+{% endblock %}

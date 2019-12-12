@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+  {% block body %}
+    <h1>Insert Recipe</h1>
+    <form action="/insert" method="POST">
+      <div class="form-group mx-sm-3">
+        <label for="usr">Name:</label>
+        <input type="text" class="form-control" name="name">
+      </div>
+      <div class="form-group mx-sm-3">
+        <label for="comment">Description:</label>
+        <textarea class="form-control" rows="5" name="description"></textarea>
+      </div>
+      <div class="form-group mx-sm-3">
+        <label for="minutes">Minutes:</label>
+        <input type="number" class="form-control" name="minutes">
+      </div>
+      <div class="form-group mx-sm-3">
+        <label for="ingredients">Ingredients</label>
+
+        <script type="text/javascript">
+          function display_ingredientDiv(){
+              var numing = document.getElementById('ningredients').value;
+              var elms = document.getElementsByName('ingredient');;
+              for(var h = 0; h<elms.length; h++) {
+                  elms[h].style.display = 'none';
+              }
+              for(var i = 0; i < numing; i++) {
+                  elms[i].style.display = 'block';
+              }
+          }
+        </script>
+
+        <select class="browser-default custom-select" id="ningredients" name="ningredients" onChange="javascript:display_ingredientDiv();">
+          <option selected>Choose</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+        </select>
+        <br><br>
+
+          <div class="form-group mx-sm-3" name="ingredient" style="display:none;">
+            <input type="text" class="form-control" name="1">
+          </div>
+          <div class="form-group mx-sm-3" name="ingredient" style="display:none;">
+            <input type="text" class="form-control" name="2">
+          </div>
+          <div class="form-group mx-sm-3" name="ingredient" style="display:none;">
+            <input type="text" class="form-control" name="3">
+          </div>
+          <div class="form-group mx-sm-3"  name="ingredient" style="display:none;">
+            <input type="text" class="form-control" name="4">
+          </div>
+          <div class="form-group mx-sm-3"  name="ingredient" style="display:none;">
+            <input type="text" class="form-control" name="5">
+          </div>
+
+          <label for="steps">Steps</label>
+
+          <script type="text/javascript">
+            function display_stepDiv(){
+                var numing = document.getElementById('nsteps').value;
+                var elms = document.getElementsByName('step');;
+                for(var h = 0; h<elms.length; h++) {
+                    elms[h].style.display = 'none';
+                }
+                for(var i = 0; i < numing; i++) {
+                    elms[i].style.display = 'block';
+                }
+            }
+          </script>
+
+          <select class="browser-default custom-select" id="nsteps" name="nsteps" onChange="javascript:display_stepDiv();">
+            <option selected>Choose</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+          </select>
+          <br><br>
+
+            <div class="form-group mx-sm-3" name="step" style="display:none;">
+              <label for="one">1:</label>
+              <input type="text" class="form-control" name="6">
+            </div>
+            <div class="form-group mx-sm-3" name="step" style="display:none;">
+              <label for="two">2:</label>
+              <input type="text" class="form-control" name="7">
+            </div>
+            <div class="form-group mx-sm-3" name="step" style="display:none;">
+              <label for="three">3:</label>
+              <input type="text" class="form-control" name="8">
+            </div>
+            <div class="form-group mx-sm-3"  name="step" style="display:none;">
+              <label for="four">4:</label>
+              <input type="text" class="form-control" name="9">
+            </div>
+            <div class="form-group mx-sm-3"  name="step" style="display:none;">
+              <label for="five">5:</label>
+              <input type="text" class="form-control" name="10">
+            </div>
+
+      </div>
+      <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Insert</button>
+    </form>
+  {% endblock %}
